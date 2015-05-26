@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Создать тест</title>
+    <!-- Bootstrap CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="edu_tests/style.css" /> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <style>
+    #questionListHeader {
+    display: none;
+    }
+    #result {
+      display: none;
+      min-width: 300px; 
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <legend>Создание теста</legend>
+      <div id="test-tpl">
+        <form action="" method="POST" role="form">
+          <div class="form-group">
+            <label for="inputTestname" class="">Имя теста: </label>
+            <input type="text" name="name" id="inputTestname" class="form-control" required="required" title="Имя теста">
+          </div>
+          <div class="form-group">
+            <label for="inputPath" class="">Путь к файлам теста: </label>
+            <input type="text" name="path" id="inputPath" class="form-control" required="required" title="Путь к директории, где хранятся файлы теста.">
+          </div>
+        </form>
+      </div>
+      <legend id="questionListHeader">Список вопросов</legend>
+      <div id="questionscontainer">
+        <ul id="question_tabs"></ul>
+      </div>
+    </div>
+    <div style="margin: auto; width: 400px;">
+      <button type="button" class="btn btn-default" id="add_question_btn">Добавить вопрос</button>
+      <button type="button" class="btn btn-default" id="generate_btn">Сгенерировать</button>
+    </div>
+    <div style="display: none">
+      <!-- Шаблон вопроса -->
+      <div id="question_tpl">
+        <div class="question1">
+<!--
+          <div class="form-group">
+            <label>Имя вопроса:</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+-->
+          <div class="form-group">
+            <label>Текст вопроса:</label>
+            <textarea cols="30" rows="3" class="form-control" name="qst"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Изображение:</label>
+            <input type="text" class="form-control" name="img">
+          </div>
+          <div class="form-group">
+            <label>Тип вопроса:</label>
+            <select name="questionType" class="form-control">
+              <option value="radio">С одним верным вариантом</option>
+              <option value="checkbox">С несколькими вернымы вариантами</option>
+            </select>
+          </div>
+          <div class="form-group" class="answers-container">
+            <label>Ответы:</label>
+            <ol></ol>
+            <button type="button" class="btn btn-default">Добавить вариант ответа</button>
+          </div>
+        </div>
+      </div>
+      <!-- /Шаблон вопроса -->
+      <!-- Шаблон ответа -->
+      <div id="answer_tpl">
+        <li>
+          <input type="text" name="answer_text">
+          <label>
+            Правильный ответ: <input type="radio">
+          </label>
+        </li>
+      </div>
+      <!-- /Шаблон ответа -->
+    </div>
+
+<div id="result">
+  <textarea cols="65" rows="10"></textarea>
+</div>
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Создать тест</title>
+    <!-- Bootstrap CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="edu_tests/style.css" /> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 class="text-center">Создать тест</h1>
+    <div class="container">
+      <button type="button" class="btn btn-default">Создать</button>
+      <div id="test-tpl">
+        <form action="" method="POST" role="form">
+          <legend>Создание теста:</legend>
+          <div class="form-group">
+            <label for="inputTestname" class="col-sm-2">Имя теста: </label>
+            <input type="text" name="testname" id="inputTestname" class="form-control" required="required" title="Имя теста">
+          </div>
+          <div class="form-group">
+            <label for="inputPath" class="col-sm-2">Путь к файлам теста: </label>
+            <input type="text" name="path" id="inputPath" class="form-control" required="required" title="Путь к директории, где хранятся файлы теста.">
+          </div>
+          <legend>Список вопросов:</legend>
+          <div id='questionscontainer'>
+            <div id="question1">
+              <div class="form-group">
+                <label for="inputQ1name" class="col-sm-2">Имя вопроса: </label>
+                <input type="text" name="q1name" id="inputQ1name" class="form-control" value="" required="required" pattern="" title="">
+              </div>
+              <div class="form-group">
+                <label for="inputQuestion1Text" class="col-sm-2">Текст вопроса:</label>
+                <textarea name="question1text" id="q1text" cols="30" rows="3" class="form-control"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label>Ответы:</label>
+                <ol>
+                  <li>
+                    <input type="text" name="q1a1" id="inputQ1a1" required="required" >
+                    <label>
+                      Правильный ответ: <input type="radio" name="q1a1r" id="inputQ1a1" value="" checked="checked">
+                    </label>
+                  </li>
+                  <li>
+                    <input type="text" name="q1a1" id="inputQ1a1"required="required">
+                    <label>
+                      Правильный ответ: <input type="radio" name="q1a1r" id="inputQ1a1" value="" checked="checked">
+                    </label>
+                  </li>
+                </ol>
+                <button type="button" class="btn btn-default">Добавить вариант ответа</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          Добавить вопрос:
+          <select name="questiontype" id="inputQuestiontype" required="required">
+            <option value="0">С одним верным вариантом</option>
+            <option value="1">С несколькими вернымы вариантами</option>
+          </select>
+          <button type="button" class="btn btn-default">+</button>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script>
+  function createQuestion(type) {
+  
+  }
+  </script>
+</body>
+</html>
