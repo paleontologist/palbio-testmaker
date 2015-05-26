@@ -87,7 +87,7 @@
   }
   $('#generate_btn').button().click(function () {
     exportTest();
-    $('#result textarea').val(JSON.stringify(window.palbioTest));
+    $('#result textarea').val(js_beautify(JSON.stringify(window.palbioTest)));
     $('#result').dialog({minWidth: 600}).show();
   })
 }());
